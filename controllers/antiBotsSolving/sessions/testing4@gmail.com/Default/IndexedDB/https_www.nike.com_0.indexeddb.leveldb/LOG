@@ -1,0 +1,25 @@
+2023/08/12-11:30:03.076 7b4 Reusing MANIFEST C:\Users\akram\OneDrive\Desktop\Pocjs2\controllers\antiBotsSolving\sessions\testing4@gmail.com\Default\IndexedDB\https_www.nike.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/08/12-11:30:03.076 7b4 Recovering log #288
+2023/08/12-11:30:03.076 7b4 Reusing old log C:\Users\akram\OneDrive\Desktop\Pocjs2\controllers\antiBotsSolving\sessions\testing4@gmail.com\Default\IndexedDB\https_www.nike.com_0.indexeddb.leveldb/000288.log 
+2023/08/12-11:30:03.077 7b4 Delete type=2 #287
+2023/08/12-11:30:12.859 262c Level-0 table #293: started
+2023/08/12-11:30:12.866 262c Level-0 table #293: 604 bytes OK
+2023/08/12-11:30:12.869 262c Delete type=0 #288
+2023/08/12-11:30:12.870 7b4 Manual compaction at level-0 from '\x00h\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00i\x00\x00\x00' @ 0 : 0; will stop at '\x00i\x00\x00\x05' @ 1913 : 1
+2023/08/12-11:30:12.872 7b4 Compacting 1@0 + 1@1 files
+2023/08/12-11:30:12.876 7b4 Generated table #294@0: 134 keys, 3567 bytes
+2023/08/12-11:30:12.876 7b4 Compacted 1@0 + 1@1 files => 3567 bytes
+2023/08/12-11:30:12.878 7b4 compacted to: files[ 0 1 1 0 0 0 0 ]
+2023/08/12-11:30:12.878 7b4 Delete type=2 #293
+2023/08/12-11:30:12.879 7b4 Manual compaction at level-0 from '\x00i\x00\x00\x05' @ 1913 : 1 .. '\x00i\x00\x00\x00' @ 0 : 0; will stop at (end)
+2023/08/12-11:30:12.888 262c Level-0 table #296: started
+2023/08/12-11:30:12.893 262c Level-0 table #296: 471 bytes OK
+2023/08/12-11:30:12.895 262c Delete type=2 #290
+2023/08/12-11:30:12.895 262c Delete type=0 #292
+2023/08/12-11:30:12.899 3c74 Manual compaction at level-0 from '\x00i\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00j\x00\x00\x00' @ 0 : 0; will stop at '\x00i\x00\x00\x05' @ 1940 : 0
+2023/08/12-11:30:12.899 3c74 Compacting 1@0 + 1@1 files
+2023/08/12-11:30:12.925 3c74 Generated table #297@0: 132 keys, 3545 bytes
+2023/08/12-11:30:12.925 3c74 Compacted 1@0 + 1@1 files => 3545 bytes
+2023/08/12-11:30:12.936 3c74 compacted to: files[ 0 1 1 0 0 0 0 ]
+2023/08/12-11:30:12.937 3c74 Delete type=2 #296
+2023/08/12-11:30:12.937 3c74 Manual compaction at level-0 from '\x00i\x00\x00\x05' @ 1940 : 0 .. '\x00j\x00\x00\x00' @ 0 : 0; will stop at (end)

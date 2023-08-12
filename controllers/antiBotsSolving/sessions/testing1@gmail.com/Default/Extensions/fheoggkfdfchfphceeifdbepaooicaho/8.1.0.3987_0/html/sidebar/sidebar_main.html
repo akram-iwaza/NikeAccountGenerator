@@ -1,0 +1,81 @@
+<section>
+  <header>
+    <div tabindex="-1" aria-hidden='true' id="top_div_accessibility" role="dialog"></div>
+    <div class='top'>
+      <div class='top__logo'>
+        <img x-mcsrc src='images/web_advisor/logo.png' alt='WebAdvisor logo' />
+      </div>
+      <div class='top__menu-icons'  tabindex="0">
+        <img id='settings' x-mcsrc src='images/sidebar/home.svg' alt="Home" role="button" />
+      </div>
+      <div class='top__menu-icons'  tabindex="0">
+        <img id='close-btn' x-mcsrc src='images/web_advisor/x-icon.svg' alt ="Close" role="button"/>
+      </div>
+    </div>
+    <div class='bottom'>
+      <img x-mcsrc src='images/sidebar/popup-logo.svg' />
+    </div>
+  </header>
+  <div class='innerbody'  tabindex="0">
+    <div id='sidebar_title' class='innerbody__title'></div>
+    <div id='sidebar_subtitle' class='innerbody__title-message'></div>
+    <div class='innerbody__stats-box' role="list">
+      <div class='innerbody__stats-box__item' role="listitem">
+        <img x-mcsrc src='images/statistics/pages-scanned-icon.svg' />
+        <span>
+          <span id='num-pages-scanned' class='innerbody__stats-box__item__number'>0</span>
+          &nbsp;
+          <span id='sidebar_pages_scanned' x-mclocalizedtext='true'></span>
+        </span>
+      </div>
+      <div id='sidebar_statsrow_unsafe_blocked' class='innerbody__stats-box__item' role="listitem">
+        <img x-mcsrc src='images/statistics/downloads-blocked-icon.svg' />
+        <span>
+          <span id='num-unsafe-blocked' class='innerbody__stats-box__item__number'>0</span>
+          &nbsp;
+          <span id='sidebar_unsafe_blocked' x-mclocalizedtext='true'></span>
+        </span>
+      </div>
+      <div class='innerbody__stats-box__item' role="listitem">
+        <img x-mcsrc src='images/statistics/pages-blocked-icon.svg' />
+        <span>
+          <span id='num-pages-blocked' class='innerbody__stats-box__item__number'>0</span>
+          &nbsp;
+          <span id='sidebar_dangerous_blocked' x-mclocalizedtext='true'></span>
+        </span>
+      </div>
+      <div  id='sidebar_statsrow_crypto' class='innerbody__stats-box__item' role="listitem">
+        <img x-mcsrc src='images/statistics/crypto-blocked-icon.svg' />
+        <span>
+          <span id='num-crypto-blocked' class='innerbody__stats-box__item__number'>0</span>
+          &nbsp;
+          <span id='sidebar_crypto_blocked' x-mclocalizedtext='true'></span>
+        </span>
+      </div>
+    </div>
+    <div class='innerbody__message'>
+      <div class='innerbody__message__title'></div>
+      <div class='innerbody__message__desc'>
+      </div>
+      <div class='innerbody__message__action'>
+        <a id='innerbody__message__action_text'></a>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class='footer-top'>
+      <div id='sidebar_view_site_report' x-mclocalizedtext='true' class='footer-top__site-report' tabindex="0"></div>
+      <a href='https://service.mcafee.com/' target='_blank' id='sidebar_get_help' x-mclocalizedtext='true' class='footer-top__help'></a>
+      <div class='footer-top__socialmedia'>
+        <a href='https://www.linkedin.com/company/mcafee' target='_blank' aria-label="Linkedin"><img x-mcsrc src='images/socialmedia/linkedin.svg' aria-hidden="true"/></a>
+        <a href='https://twitter.com/McAfee' target='_blank' aria-label="Twitter"><img x-mcsrc src='images/socialmedia/twitter.svg' aria-hidden="true"/></a>
+        <a href='https://www.facebook.com/McAfee/' target='_blank' aria-label="Facebook"><img x-mcsrc src='images/socialmedia/facebook.svg' aria-hidden="true"/></a>
+      </div>
+    </div>
+    <div class='footer-bottom' role="contentinfo">
+      <div id='sidebar_version' x-mclocalizedtext='true' class='footer-bottom__version' tabindex="0"></div>
+      <a href='https://www.mcafee.com/legal?tab=product' target='_blank' id='sidebar_terms' x-mclocalizedtext='true' class='footer-bottom__terms'></a>
+      <a href='https://www.mcafee.com/legal?tab=privacy' target='_blank' id='sidebar_privacy' x-mclocalizedtext='true' class='footer-bottom__privacy'></a>
+    </div>
+  </footer>
+</section>

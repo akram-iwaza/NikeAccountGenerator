@@ -1,0 +1,6 @@
+2023/08/12-11:37:05.864 44d8 Reusing MANIFEST C:\Users\akram\OneDrive\Desktop\Pocjs2\controllers\antiBotsSolving\sessions\testing6@gmail.com\Default\IndexedDB\https_www.nike.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/08/12-11:37:05.865 44d8 Recovering log #30
+2023/08/12-11:37:05.865 44d8 Reusing old log C:\Users\akram\OneDrive\Desktop\Pocjs2\controllers\antiBotsSolving\sessions\testing6@gmail.com\Default\IndexedDB\https_www.nike.com_0.indexeddb.leveldb/000030.log 
+2023/08/12-11:37:05.866 44d8 Delete type=2 #29
+2023/08/12-11:37:13.902 1db4 Manual compaction at level-0 from '\x00\x0c\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x0d\x00\x00\x00' @ 0 : 0; will stop at (end)
+2023/08/12-11:37:13.908 44d8 Manual compaction at level-0 from '\x00\x0d\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x0e\x00\x00\x00' @ 0 : 0; will stop at (end)

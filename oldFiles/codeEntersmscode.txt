@@ -1,0 +1,171 @@
+// const enterSmsCode = async (page, numberObject, email) => {
+//   const maxRetries = 3; // Define the maximum number of retries
+//   let retryCount = 0;
+
+//   while (retryCount < maxRetries) {
+//     try {
+//       const smsCodePromise = await numberObject.getCode(20);
+//       if (!smsCodePromise) {
+//         console.log("failed to get code");
+//         retryCount++;
+//         await delay(5000);
+//         continue; // Retry to get SMS code
+//       }
+//       await numberObject.success();
+//       console.log(smsCodePromise);
+//       await enterVerificationCode(page, smsCodePromise);
+//       await delay(3000);
+//       await doneButtonAction(page);
+//       console.log(
+//         "in sms when done phone number is: " + numberObject.phoneNumber
+//       );
+//       return numberObject.phoneNumber;
+//     } catch (error) {
+//       console.log("sms is null: " + error);
+//       retryCount++;
+//       if (retryCount >= maxRetries) {
+//         console.log("Max retries reached, closing page.");
+//         await page.close();
+//         return;
+//       }
+//       console.log("retry count number is : " + retryCount);
+//       await closeDialogOnError(page);
+//       await delay(2000);
+//       await page.reload();
+//       await delay(3000);
+//       await clickAddButton(page);
+//     }
+//   }
+
+//   // If max retries reached, you may want to handle the situation
+//   // depending on the context of your application.
+// };
+// const enterSmsCode = async (page, numberObject, email) => {
+//   const maxRetries = 3; // Define the maximum number of retries
+//   let retryCount = 0;
+//   try {
+//     if (getSmsRetryNumber > 3) {
+//       throw new Error("Failed to Get SMS");
+//     }
+//     const smsCodePromise = await numberObject.getCode(20);
+//     if (!smsCodePromise) {
+//       console.log("failed to get code");
+//       getSmsRetryNumber++;
+//       await delay(5000);
+//       return enterSmsCode(page, numberObject, email); // Retry with enterSmsCode
+//     }
+//     await numberObject.success();
+//     console.log(smsCodePromise);
+//     await enterVerificationCode(page, smsCodePromise);
+//     await delay(3000);
+//     await doneButtonAction(page);
+//     console.log(
+//       "in sms when done phone number is: " + numberObject.phoneNumber
+//     );
+//     return numberObject.phoneNumber;
+//   } catch (error) {
+//     console.log("sms is null: " + error);
+//     if (retryCount >= maxRetries) {
+//       console.log("Max retries reached, closing page.");
+//       await page.close();
+//       return;
+//     }
+//     retryCount++;
+//     console.log("retry count number is : " + retryCount);
+//     await closeDialogOnError(page);
+//     await delay(2000);
+//     await page.reload();
+//     await delay(3000);
+//     await clickAddButton(page);
+//     return handleSmsProcess(page, email); // Retry with handleSmsProcess
+//   }
+// };
+// const enterSmsCode = async (page, numberObject, email) => {
+//   try {
+//     if (getSmsRetryNumber > 3) {
+//       throw new Error("Failed to Get SMS");
+//     }
+//     const smsCodePromise = await numberObject.getCode(20);
+//     if (!smsCodePromise) {
+//       console.log("failed to get code");
+//       getSmsRetryNumber++;
+//       await delay(5000);
+//       return enterPhoneNumber(page, numberObject, email);
+//     }
+//     await numberObject.success();
+//     console.log(smsCodePromise);
+//     await enterVerificationCode(page, smsCodePromise);
+//     await delay(3000);
+//     await doneButtonAction(page);
+//     console.log(
+//       "in sms when done phone number is : " + numberObject.phoneNumber
+//     );
+//     return numberObject.phoneNumber;
+//   } catch (error) {
+//     if (retries < maxRetries) {
+//       retries++;
+//       console.log("sms is null : " + error);
+//       await closeDialogOnError(page);
+//       await delay(2000);
+//       await page.reload();
+//       await delay(3000);
+//       await clickAddButton(page);
+//       return handleSmsProcess(page, email);
+//     } else {
+//       await page.close();
+//       throw new Error("Max retries reached");
+//     }
+//   }
+// };
+// const enterSmsCode = async (page, numberObject, email) => {
+//   try {
+//     if (getSmsRetryNumber > 3) {
+//       throw new Error("Failed to Get SMS");
+//     }
+//     const smsCodePromise = await numberObject.getCode(20);
+//     if (!smsCodePromise) {
+//       console.log("failed to get code");
+//       getSmsRetryNumber++;
+//       await delay(5000);
+//       return enterPhoneNumber(page, numberObject, email);
+//     }
+//     await numberObject.success();
+//     console.log(smsCodePromise);
+//     await enterVerificationCode(page, smsCodePromise);
+//     await delay(3000);
+//     await doneButtonAction(page);
+//     return numberObject.phoneNumber;
+//   } catch (error) {
+//     console.log("sms is null : " + error);
+//     await closeDialogOnError(page);
+//     await delay(2000);
+//     await page.reload();
+//     await delay(3000);
+//     await clickAddButton(page);
+//     return handleSmsProcess(page, email);
+//   }
+// };
+
+// async function updateProfileWithNumber(email, phoneNumber) {
+//   try {
+//     const profilesDataPhone = fs.readFileSync("profiles.json", "utf8");
+//     const profilesPhone = JSON.parse(profilesDataPhone);
+
+//     for (let id in profilesPhone) {
+//       if (profilesPhone[id].email === email) {
+//         profilesPhone[id].phoneNumber = "+" + phoneNumber;
+//         console.log(`${phoneNumber} is added for email ${email}`);
+//       }
+//     }
+
+//     fs.writeFileSync(
+//       "profiles.json",
+//       JSON.stringify(profilesPhone, null, 2),
+//       "utf8"
+//     );
+//   } catch (error) {
+//     console.log("error to click on updateProfileWithNumber  " + error);
+//     console.log("Retring...");
+//     return updateProfileWithNumber(email, phoneNumber);
+//   }
+// }

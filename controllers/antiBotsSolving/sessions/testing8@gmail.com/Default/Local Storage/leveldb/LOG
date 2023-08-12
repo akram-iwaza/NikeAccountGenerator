@@ -1,0 +1,18 @@
+2023/08/12-11:34:58.285 2f64 Reusing MANIFEST C:\Users\akram\OneDrive\Desktop\Pocjs2\controllers\antiBotsSolving\sessions\testing8@gmail.com\Default\Local Storage\leveldb/MANIFEST-000001
+2023/08/12-11:34:58.289 2f64 Recovering log #13
+2023/08/12-11:34:58.295 2f64 Reusing old log C:\Users\akram\OneDrive\Desktop\Pocjs2\controllers\antiBotsSolving\sessions\testing8@gmail.com\Default\Local Storage\leveldb/000013.log 
+2023/08/12-11:36:50.190 2f64 Level-0 table #17: started
+2023/08/12-11:36:50.210 2f64 Level-0 table #17: 18902 bytes OK
+2023/08/12-11:36:50.224 2f64 Delete type=0 #13
+2023/08/12-11:36:50.224 2f64 Compacting 4@0 + 1@1 files
+2023/08/12-11:36:50.235 2f64 Generated table #18@0: 55 keys, 21312 bytes
+2023/08/12-11:36:50.235 2f64 Compacted 4@0 + 1@1 files => 21312 bytes
+2023/08/12-11:36:50.237 2f64 compacted to: files[ 0 1 1 0 0 0 0 ]
+2023/08/12-11:36:50.238 2f64 Delete type=2 #7
+2023/08/12-11:36:50.238 2f64 Delete type=2 #9
+2023/08/12-11:36:50.238 2f64 Delete type=2 #12
+2023/08/12-11:36:50.238 2f64 Delete type=2 #14
+2023/08/12-11:36:50.238 2f64 Delete type=2 #17
+2023/08/12-11:37:06.607 3e04 Level-0 table #20: started
+2023/08/12-11:37:06.647 3e04 Level-0 table #20: 35822 bytes OK
+2023/08/12-11:37:06.650 3e04 Delete type=0 #16

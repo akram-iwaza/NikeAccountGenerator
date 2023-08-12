@@ -1,0 +1,15 @@
+2023/08/12-11:29:56.616 3ecc Reusing MANIFEST C:\Users\akram\OneDrive\Desktop\Pocjs2\controllers\antiBotsSolving\sessions\testing3@gmail.com\Default\IndexedDB\https_www.nike.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/08/12-11:29:56.617 3ecc Recovering log #389
+2023/08/12-11:29:56.617 3ecc Reusing old log C:\Users\akram\OneDrive\Desktop\Pocjs2\controllers\antiBotsSolving\sessions\testing3@gmail.com\Default\IndexedDB\https_www.nike.com_0.indexeddb.leveldb/000389.log 
+2023/08/12-11:29:56.618 3ecc Delete type=2 #387
+2023/08/12-11:30:08.127 f3c Manual compaction at level-0 from '\x00\x81\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x82\x00\x00\x00' @ 0 : 0; will stop at (end)
+2023/08/12-11:30:08.140 f3c Level-0 table #394: started
+2023/08/12-11:30:08.143 f3c Level-0 table #394: 765 bytes OK
+2023/08/12-11:30:08.146 f3c Delete type=0 #389
+2023/08/12-11:30:08.147 3ecc Manual compaction at level-0 from '\x00\x80\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x81\x00\x00\x00' @ 0 : 0; will stop at '\x00\x81\x00\x00\x05' @ 2383 : 1
+2023/08/12-11:30:08.147 3ecc Compacting 1@0 + 1@1 files
+2023/08/12-11:30:08.150 3ecc Generated table #395@0: 146 keys, 4000 bytes
+2023/08/12-11:30:08.150 3ecc Compacted 1@0 + 1@1 files => 4000 bytes
+2023/08/12-11:30:08.152 3ecc compacted to: files[ 0 1 1 0 0 0 0 ]
+2023/08/12-11:30:08.153 3ecc Delete type=2 #394
+2023/08/12-11:30:08.153 3ecc Manual compaction at level-0 from '\x00\x81\x00\x00\x05' @ 2383 : 1 .. '\x00\x81\x00\x00\x00' @ 0 : 0; will stop at (end)

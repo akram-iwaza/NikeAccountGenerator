@@ -1,0 +1,17 @@
+2023/08/12-11:13:24.519 da0 Reusing MANIFEST C:\Users\akram\OneDrive\Desktop\Pocjs2\controllers\antiBotsSolving\sessions\testing7@gmail.com\Default\IndexedDB\https_www.nike.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/08/12-11:13:24.520 da0 Recovering log #4
+2023/08/12-11:13:24.521 da0 Reusing old log C:\Users\akram\OneDrive\Desktop\Pocjs2\controllers\antiBotsSolving\sessions\testing7@gmail.com\Default\IndexedDB\https_www.nike.com_0.indexeddb.leveldb/000004.log 
+2023/08/12-11:13:33.915 237c Level-0 table #8: started
+2023/08/12-11:13:33.918 237c Level-0 table #8: 609 bytes OK
+2023/08/12-11:13:33.922 237c Delete type=0 #4
+2023/08/12-11:13:33.923 da0 Manual compaction at level-0 from '\x00\x02\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x03\x00\x00\x00' @ 0 : 0; will stop at (end)
+2023/08/12-11:13:33.924 237c Level-0 table #10: started
+2023/08/12-11:13:33.929 237c Level-0 table #10: 474 bytes OK
+2023/08/12-11:13:33.933 237c Delete type=0 #7
+2023/08/12-11:13:33.934 da0 Manual compaction at level-0 from '\x00\x03\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x04\x00\x00\x00' @ 0 : 0; will stop at '\x00\x03\x00\x00\x05' @ 58 : 0
+2023/08/12-11:13:33.934 da0 Compacting 1@0 + 1@1 files
+2023/08/12-11:13:33.939 da0 Generated table #11@0: 14 keys, 546 bytes
+2023/08/12-11:13:33.939 da0 Compacted 1@0 + 1@1 files => 546 bytes
+2023/08/12-11:13:33.942 da0 compacted to: files[ 0 1 1 0 0 0 0 ]
+2023/08/12-11:13:33.943 da0 Delete type=2 #10
+2023/08/12-11:13:33.943 da0 Manual compaction at level-0 from '\x00\x03\x00\x00\x05' @ 58 : 0 .. '\x00\x04\x00\x00\x00' @ 0 : 0; will stop at (end)

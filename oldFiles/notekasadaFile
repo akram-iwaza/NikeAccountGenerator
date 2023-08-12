@@ -1,0 +1,453 @@
+const puppeteer = require("puppeteer-core");
+// const { createCursor } = require("ghost-cursor");
+const chrome_launcher = require("chrome-launcher");
+const { path, createCursor } = require("ghost-cursor");
+const fs = require("fs");
+const axios = require("axios");
+const { fillRegistrationForm } = require("../auth/RegisterNikeAccount.js");
+const { fillSettingProfile } = require("../addPhoneNumber.js");
+const { waitForAndClick } = require("../../clickMoves/clickButtons.js");
+const { smoothScroll } = require("../../clickMoves/scrolling.js");
+const evasion_1 = fs.readFileSync("evasion-1.js", "utf-8");
+const evasion_2 = fs
+  .readFileSync("evasion-2.js", "utf-8")
+  .replace(`'replaceWidth'`, 1920)
+  .replace(`'replaceHeigh'`, 1080);
+const fp_body = fs.readFileSync("fp-body.html", "utf-8");
+const fp_url =
+  "https://unite.nike.com/149e9513-01fa-4fb0-aad4-566afd725d1b/2d206a39-8ed7-437e-a3be-862e0f06eea3/fp";
+const sessions = "sessions";
+if (!fs.existsSync(sessions)) {
+  fs.mkdirSync(sessions);
+}
+const getProxies = () => {
+  const proxies = fs
+    .readFileSync("proxies.txt", "utf8")
+    .split("\n")
+    .map((proxy) => proxy.trim());
+  return proxies.filter((proxy) => proxy !== ""); // filter out any empty lines
+};
+
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+async function solve_shared() {
+  const flags = [
+    "--allow-pre-commit-input",
+    "--disable-background-networking",
+    "--enable-features=NetworkServiceInProcess2",
+    "--disable-background-timer-throttling",
+    "--disable-backgrounding-occluded-windows",
+    "--disable-breakpad",
+    "--disable-client-side-phishing-detection",
+    "--disable-dev-shm-usage",
+    "--disable-features=Translate,BackForwardCache,AvoidUnnecessaryBeforeUnloadCheckSync",
+    "--disable-hang-monitor",
+    "--disable-ipc-flooding-protection",
+    "--disable-popup-blocking",
+    "--disable-prompt-on-repost",
+    "--disable-renderer-backgrounding",
+    "--disable-sync",
+    "--force-color-profile=srgb",
+    "--metrics-recording-only",
+    "--no-first-run",
+    "--password-store=basic",
+    "--use-mock-keychain",
+    "--enable-blink-features=IdleDetection",
+    "--export-tagged-pdf",
+    "--headless",
+    "--hide-scrollbars",
+    "--mute-audio",
+    "--no-first-run",
+    "--enable-features=ReduceUserAgent",
+    "--disable-blink-features=AutomationControlled",
+    "--disable-site-isolation-trials",
+    "--test-type",
+    "--window-size=1920,1080",
+  ];
+
+  let launched = await chrome_launcher.launch({
+    chromeFlags: flags,
+    ignoreDefaultFlags: true,
+  });
+  const browserURL = "http://127.0.0.1:" + launched.port;
+  console.log({ browserURL });
+
+  console.log("Solving shared", browserURL);
+  let wsUrl = await getWsUrl(launched.port);
+  console.log("wsUrl ===>" + wsUrl);
+  await solve_kasada_shared(wsUrl);
+  launched.kill();
+}
+async function solve_task(
+  profile_name,
+  emailAccount,
+  passwordAccount,
+  j,
+  randomFirstName,
+  randomLastName
+) {
+  let proxyIndex = 0;
+  const proxies = getProxies();
+  console.log(proxies);
+  let proxy;
+  for (let run = 0; run <= j; run++) {
+    const proxys = proxies[proxyIndex % proxies.length];
+    proxyIndex++;
+    console.log(proxys);
+    proxy = proxys;
+    console.log(`Run ${run}: Proxy for kasada page - ${proxys}`);
+  }
+  console.log("proxy in kasada page", proxy);
+  const [username, password] = proxy.split(":");
+
+  const parts = proxy.split(":");
+  if (parts.length === 4) {
+    const ipAddress = parts[2];
+    const port = parts[3];
+    const newProxy = `http://${ipAddress}:${port}`;
+    console.log(newProxy);
+    console.log(username);
+    console.log(password);
+    console.log(`solve_task headless ${sessions}/${profile_name}`);
+
+    let width = 1920;
+    let height = 1080;
+
+    const flags = [
+      `--user-data-dir=${__dirname}/${sessions}/${profile_name}`,
+      "--no-first-run",
+      "--disable-blink-features=AutomationControlled",
+      "--test-type",
+      `--window-size=${width},${height}`,
+      "--enable-features=ReduceUserAgent",
+      `--proxy-server=${newProxy}`,
+      // '--remote-debugging-port=0',
+    ];
+
+    console.log({ flags });
+
+    let launched = await chrome_launcher.launch({
+      chromeFlags: flags,
+      ignoreDefaultFlags: true,
+      userDataDir: false,
+      ignoreHTTPSErrors: true,
+    });
+
+    console.log("launched chrome", launched);
+
+    const browserURL = "http://127.0.0.1:" + launched.port;
+    console.log({ browserURL });
+
+    let wsUrl = await getWsUrl(launched.port);
+    console.log("Solving for task", profile_name, { width, height });
+    console.log("wsUrl ===>" + wsUrl);
+    await solve_kasada_task(
+      wsUrl,
+      username,
+      password,
+      emailAccount,
+      passwordAccount,
+      randomFirstName,
+      randomLastName
+    );
+  }
+}
+async function getWsUrl(debuggerPort) {
+  try {
+    console.log("get response");
+    const get = await axios.get(
+      "http://127.0.0.1:" + debuggerPort + "/json/version"
+    );
+    // console.log(get)
+    return get.data.webSocketDebuggerUrl;
+  } catch (e) {
+    // console.log(e)
+    return getWsUrl(debuggerPort);
+  }
+}
+
+async function solve_kasada_shared(browserurl) {
+  console.log("solve_kasada_shared");
+  const browser = await puppeteer.connect({
+    browserWSEndpoint: browserurl,
+    defaultViewport: null,
+  });
+
+  // const page = await browser.newPage();
+  let pages = await browser.pages();
+
+  let page = pages[0];
+  // await page.authenticate({
+  //   username: "ape189",
+  //   password: "xm8hR0Ya",
+  // });
+  console.log("solve_kasada_shared get page x2 evaluations scripts");
+  page.setRequestInterception(true);
+  page.evaluateOnNewDocument(evasion_1);
+  page.evaluateOnNewDocument(evasion_2);
+
+  page.on("request", (request) => {
+    const url = request.url();
+    if (url.endsWith("/fp")) {
+      request.respond({
+        status: 200,
+        contentType: "text/html; charset=UTF-8",
+        body: fp_body,
+      });
+    } else {
+      request.continue();
+    }
+  });
+  console.log("goto: ", fp_url);
+
+  await page.goto(fp_url);
+  console.log("got response and browser closer");
+  console.log("done");
+}
+
+async function handleLogout(page) {
+  const maxRetries = 3; // Define the maximum number of retries
+  const retryCount = 0;
+  try {
+    const selectorAvatar = 'button[aria-haspopup="true"]';
+    await page.waitForSelector(selectorAvatar);
+    await page.click(selectorAvatar);
+    await delay(3000);
+    const logoutSelector = 'button[data-qa="top-nav-logout-button"]';
+    await page.waitForSelector(logoutSelector);
+    await page.click(logoutSelector);
+    await page.waitForNavigation();
+  } catch (error) {
+    // If the maximum number of retries is reached, close the page
+    if (retryCount >= maxRetries) {
+      console.log("Max retries reached of logout button, closing page.");
+      await page.close();
+      return;
+    }
+  }
+}
+
+async function solve_kasada_task(
+  browserurl,
+  username,
+  password,
+  emailAccount,
+  passwordAccount,
+  randomFirstName,
+  randomLastName
+) {
+  try {
+    const browser = await puppeteer.connect({
+      browserWSEndpoint: browserurl,
+      defaultViewport: null,
+    });
+
+    const page = await browser.newPage();
+
+    await page.authenticate({ username, password });
+    page.setDefaultTimeout(60000);
+    page.setDefaultNavigationTimeout(60000);
+
+    page.setRequestInterception(true);
+    page.evaluateOnNewDocument(evasion_1);
+    page.on("response", async (response) => {
+      const url = response.url();
+      if (url.endsWith("/fp")) {
+        console.log("/fp request", response.status);
+      }
+    });
+    page.on("request", (request) => {
+      request.continue();
+    });
+    // page.on("response", async (response) => {
+    //   if (response.url() === "your_api_endpoint_here") {
+    //     const responseBody = await response.json(); // Assuming the response is JSON
+    //     if (responseBody.error_id === "47752748-7b32-491b-bfae-b84e40a0206f") {
+    //       console.log("Received error response. Closing the page.");
+    //       await browser.close();
+    //     }
+    //   }
+    // });
+
+    const loginUrl = "https://www.nike.com/launch";
+    await handleLoginRetry(
+      page,
+      loginUrl,
+      3,
+      emailAccount,
+      passwordAccount,
+      randomFirstName,
+      randomLastName
+    );
+    console.log("Browsers will be closed after a second...");
+    await delay(1000);
+    await browser.close();
+  } catch (error) {
+    console.log(error, "kasadapage");
+    return solve_kasada_task(
+      browserurl,
+      username,
+      password,
+      emailAccount,
+      passwordAccount,
+      randomFirstName,
+      randomLastName
+    );
+  }
+}
+
+async function handleLoginRetry(
+  page,
+  url,
+  maxRetries,
+  emailAccount,
+  passwordAccount,
+  randomFirstName,
+  randomLastName
+) {
+  let retries = 0;
+
+  while (retries < maxRetries) {
+    try {
+      await page.goto(url);
+
+      const verifCodeSelector =
+        'button[data-qa="top-nav-join-or-login-button"]';
+      const element = await page.$(verifCodeSelector);
+
+      if (element) {
+        console.log("Join/Log In button exists");
+        // await smoothScroll(page, 10);
+        await delay(3500);
+        await waitForAndClick(page, verifCodeSelector);
+        await delay(3000);
+        await fillRegistrationForm(
+          page,
+          emailAccount,
+          passwordAccount,
+          randomFirstName,
+          randomLastName
+        );
+      } else {
+        console.log("Join/Log In button does not exist");
+        await delay(4000);
+        await handleLogout(page);
+        await delay(4000);
+        await smoothScroll(page, 10);
+        await waitForAndClick(page, verifCodeSelector);
+        await delay(4000);
+        await fillRegistrationForm(
+          page,
+          emailAccount,
+          passwordAccount,
+          randomFirstName,
+          randomLastName
+        );
+      }
+
+      await delay(10000);
+      console.log("Login process succeeded."); // Adding success log
+      return; // Exit the loop if successful
+    } catch (error) {
+      console.log(`Attempt ${retries + 1} failed:`, error);
+      retries++;
+      if (retries >= maxRetries) {
+        console.log("Max retries reached. Login process failed.");
+        return; // Exit the loop if max retries reached
+      }
+    }
+  }
+}
+
+module.exports = {
+  solve_shared,
+  solve_task,
+};
+// async function solve_kasada_task(browserurl, username, password) {
+//   console.log("solve_kasada_task");
+//   const browser = await puppeteer.connect({
+//     browserWSEndpoint: browserurl,
+//     defaultViewport: null,
+//   });
+
+//   const page = await browser.newPage();
+//   await page.authenticate({ username, password });
+//   page.setDefaultTimeout(90000);
+//   page.setDefaultNavigationTimeout(90000);
+//   //   const page = (await browser.pages())[10];
+//   console.log("solve_kasada_task page");
+
+//   page.setRequestInterception(true);
+//   page.evaluateOnNewDocument(evasion_1);
+
+//   page.on("response", (response) => {
+//     const url = response.url();
+//     // console.log("got response", url);
+
+//     if (url.endsWith("/fp")) {
+//       console.log("/fp request", response.status);
+//     }
+//   });
+
+//   page.on("request", (request) => {
+//     request.continue();
+//   });
+//   try {
+//     await page.goto("https://www.nike.com/launch");
+//     console.log("starting bot...");
+
+//     const verifCodeSelectorcheck =
+//       'button[data-qa="top-nav-join-or-login-button"]';
+//     const element = await page.$(verifCodeSelectorcheck);
+
+//     if (element) {
+//       console.log("Join/Log In button exists");
+//       await waitForAndClick(
+//         page,
+//         'button[data-qa="top-nav-join-or-login-button"]'
+//       );
+//       await delay(4000);
+//       await fillRegistrationForm(page);
+//     } else {
+//       console.log("Join/Log In button does not exist");
+//       await delay(4000);
+
+//       const selectorAvatar = 'button[aria-haspopup="true"]';
+//       await page.waitForSelector(selectorAvatar);
+//       await page.click(selectorAvatar);
+//       await delay(3000);
+//       const logoutSelector = 'button[data-qa="top-nav-logout-button"]';
+
+//       await page.waitForSelector(logoutSelector);
+//       await page.click(logoutSelector);
+//       await page.waitForNavigation();
+//       await waitForAndClick(
+//         page,
+//         'button[data-qa="top-nav-join-or-login-button"]'
+//       );
+//       await delay(4000);
+//       await fillRegistrationForm(page);
+//     }
+//     await delay(10000);
+//     await browser.close();
+//   } catch (error) {
+//     console.log(error, "kasadapage");
+//   }
+// }
+
+// const userNameButtontoDelete = 'span[data-qa="user-name"]';
+// if (userNameButtontoDelete !== null) {
+//   await delay(4000);
+
+//   const selectorAvatar = 'button[aria-haspopup="true"]';
+//   await page.waitForSelector(selectorAvatar);
+//   await page.click(selectorAvatar);
+//   await delay(3000);
+//   const logoutSelector = 'button[data-qa="top-nav-logout-button"]';
+
+//   await page.waitForSelector(logoutSelector);
+//   await page.click(logoutSelector);
+//   await page.waitForNavigation();
+// }
+// await delay(4000);

@@ -1,0 +1,3 @@
+2023/08/12-11:13:12.371 4120 Creating DB C:\Users\akram\OneDrive\Desktop\Pocjs2\controllers\antiBotsSolving\sessions\testing10@gmail.com\Default\IndexedDB\https_www.nike.com_0.indexeddb.leveldb since it was missing.
+2023/08/12-11:13:12.387 4120 Reusing MANIFEST C:\Users\akram\OneDrive\Desktop\Pocjs2\controllers\antiBotsSolving\sessions\testing10@gmail.com\Default\IndexedDB\https_www.nike.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/08/12-11:13:44.328 4120 Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)

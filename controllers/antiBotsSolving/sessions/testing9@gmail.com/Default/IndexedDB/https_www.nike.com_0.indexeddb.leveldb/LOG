@@ -1,0 +1,6 @@
+2023/08/12-11:13:12.800 24cc Creating DB C:\Users\akram\OneDrive\Desktop\Pocjs2\controllers\antiBotsSolving\sessions\testing9@gmail.com\Default\IndexedDB\https_www.nike.com_0.indexeddb.leveldb since it was missing.
+2023/08/12-11:13:12.810 24cc Reusing MANIFEST C:\Users\akram\OneDrive\Desktop\Pocjs2\controllers\antiBotsSolving\sessions\testing9@gmail.com\Default\IndexedDB\https_www.nike.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/08/12-11:13:44.621 24cc Level-0 table #5: started
+2023/08/12-11:13:44.625 24cc Level-0 table #5: 537 bytes OK
+2023/08/12-11:13:44.628 24cc Delete type=0 #3
+2023/08/12-11:13:44.629 24cc Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)

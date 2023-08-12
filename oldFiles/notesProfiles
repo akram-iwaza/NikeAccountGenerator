@@ -1,0 +1,154 @@
+  "1691153475550": {
+    "email": "Michael_Stephen_473@dsfclimatecool.com",
+    "password": "Dm0eQhSm",
+    "firstName": "Michael",
+    "lastName": "Stephen",
+    "shoppingPreference": "MENS",
+    "dateOfBirth": "17/06/1964",
+    "privacyTermsAgreed": true,
+    "createdAt": "2023-08-04T12:51:15.550Z"
+  },
+  "1691217853146": {
+    "email": "Michael_Jones_995@dsfclimatecool.com",
+    "password": "Ks9Sktko",
+    "firstName": "Michael",
+    "lastName": "Jones",
+    "shoppingPreference": "MENS",
+    "dateOfBirth": "27/02/2001",
+    "privacyTermsAgreed": true,
+    "createdAt": "2023-08-05T06:44:13.146Z"
+  },
+  "1691218688840": {
+    "email": "David_Edward_587@dsfclimatecool.com",
+    "password": "Dd0Rw57Y",
+    "firstName": "David",
+    "lastName": "Edward",
+    "shoppingPreference": "MENS",
+    "dateOfBirth": "25/02/1998",
+    "privacyTermsAgreed": true,
+    "createdAt": "2023-08-05T06:58:08.840Z"
+  },
+  "1691225693972": {
+    "email": "James_Dennis_053@dsfclimatecool.com",
+    "password": "Pe1QDOr9",
+    "firstName": "James",
+    "lastName": "1",
+    "shoppingPreference": "MENS",
+    "dateOfBirth": "23/11/1955",
+    "privacyTermsAgreed": true,
+    "createdAt": "2023-08-05T08:54:53.972Z"
+  },
+  "1691225701272": {
+    "email": "James_Jeffrey_531@dsfclimatecool.com",
+    "password": "Mq5VxuRS",
+    "firstName": "James",
+    "lastName": "Jeffrey",
+    "shoppingPreference": "MENS",
+    "dateOfBirth": "24/11/1950",
+    "privacyTermsAgreed": true,
+    "createdAt": "2023-08-05T08:55:01.272Z"
+  },
+  "1691227926613": {
+    "email": "Charles_Anthony_904@dsfclimatecool.com",
+    "password": "Kq5fakjl",
+    "name": "Charles Anthony",
+    "shoppingPreference": "MENS",
+    "dateOfBirth": "26/05/1972",
+    "privacyTermsAgreed": true,
+    "createdAt": "2023-08-05T09:32:06.613Z"
+  },
+  "1691228815174": {
+    "email": "William_George_958@dsfclimatecool.com",
+    "password": "Az0tljDK",
+    "name": "William George",
+    "shoppingPreference": "MENS",
+    "dateOfBirth": "01/09/1987",
+    "privacyTermsAgreed": true,
+    "createdAt": "2023-08-05T09:46:55.174Z"
+  },
+  "1691231823980": {
+    "email": "Thomas_Smith_006@dsfclimatecool.com",
+    "password": "Qp1mIw4X",
+    "name": "Thomas Smith",
+    "shoppingPreference": "MENS",
+    "dateOfBirth": "09/01/1978",
+    "privacyTermsAgreed": true,
+    "createdAt": "2023-08-05T10:37:03.980Z"
+  },
+  "1691231972366": {
+    "email": "Michael_Jeffrey_809@dsfclimatecool.com",
+    "password": "Wd3LFyv0",
+    "name": "Michael Jeffrey",
+    "shoppingPreference": "MENS",
+    "dateOfBirth": "04/07/1955",
+    "privacyTermsAgreed": true,
+    "createdAt": "2023-08-05T10:39:32.366Z"
+  },
+  "1691232722746": {
+    "email": "Gary_Edward_177@dsfclimatecool.com",
+    "password": "Sm2GYRlS",
+    "name": "Gary Edward",
+    "shoppingPreference": "MENS",
+    "dateOfBirth": "18/05/1974",
+    "privacyTermsAgreed": true,
+    "createdAt": "2023-08-05T10:52:02.746Z"
+  },
+
+
+
+  email: James_Jones_115@dsfclimatecool.com
+password: Uv0ZXGRy
+name: James Jones
+shoppingPreference: MENS
+dateOfBirth: 04/01/1951
+privacyTermsAgreed: true
+createdAt: 2023-08-05T12:24:06.562Z
+
+http://edge_buveduho3o3e:savuzigotaxa:194.145.117.246:61234
+http://edge_buveduho3o3e:savuzigotaxa:194.145.117.247:3832
+http://edge_buveduho3o3e:savuzigotaxa:194.145.117.248:3832
+http://edge_buveduho3o3e:savuzigotaxa:194.145.117.249:3832
+http://edge_buveduho3o3e:savuzigotaxa:194.145.117.250:3832
+http://edge_buveduho3o3e:savuzigotaxa:194.145.117.251:3832
+http://edge_buveduho3o3e:savuzigotaxa:194.145.117.252:3832
+http://edge_buveduho3o3e:savuzigotaxa:194.145.117.253:3832
+http://edge_buveduho3o3e:savuzigotaxa:194.145.117.254:3832
+
+// do {
+//   await new Promise((resolve) => setTimeout(resolve, 3000)); // wait for 1 second before checking again
+// } while (!smsCodeNumber);
+// const addButtonSelector =
+//   "#settings > div.css-5d5ho6 > div.css-1sacv8c.ncss-col-lg-4.pt9-lg.pb12-lg.va-sm-t > div:nth-child(2) > div > form > div.account-form > div.mex-mobile-input-wrapper.ncss-col-sm-12.ncss-col-md-12.pl0-sm.pr0-sm.pb3-sm > div > div > div > div.ncss-col-sm-6.ta-sm-r.va-sm-m.flx-jc-sm-fe.d-sm-iflx > button";
+// await page.waitForSelector(addButtonSelector);
+// await page.click(addButtonSelector);
+
+// await delay(3000);
+
+// (async () => {
+//   const balance = await api.getBalance();
+//   console.log(`My balance is ${balance}`);
+// })();
+
+// // Getting a number to activate Gmail services
+// api
+//   .getNumber({ service: "Nike", country: "USA" })
+//   .then(async (number) => {
+//     console.log(number, "log numbers");
+
+//     await number.ready();
+//     const numberWithoutCode = number.phoneNumber.slice(1);
+//     phoneNumber = numberWithoutCode;
+
+//     number
+//       .getCode(25)
+//       .then(async (code) => {
+//         await number.success();
+//         smsCodeNumber = code;
+//         console.log(code, "log code2");
+//       })
+//       .catch((err) => {
+//         console.error(err);
+//         number.failed();
+//       });
+//   })
+//   .catch(console.error);

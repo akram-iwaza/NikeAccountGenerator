@@ -1,0 +1,25 @@
+2023/08/12-11:35:13.512 9f8 Reusing MANIFEST C:\Users\akram\OneDrive\Desktop\Pocjs2\controllers\antiBotsSolving\sessions\testing7@gmail.com\Default\IndexedDB\https_www.nike.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/08/12-11:35:13.512 9f8 Recovering log #9
+2023/08/12-11:35:13.513 9f8 Reusing old log C:\Users\akram\OneDrive\Desktop\Pocjs2\controllers\antiBotsSolving\sessions\testing7@gmail.com\Default\IndexedDB\https_www.nike.com_0.indexeddb.leveldb/000009.log 
+2023/08/12-11:35:13.513 9f8 Delete type=2 #8
+2023/08/12-11:35:13.886 9f8 Level-0 table #14: started
+2023/08/12-11:35:13.890 9f8 Level-0 table #14: 603 bytes OK
+2023/08/12-11:35:13.893 9f8 Delete type=0 #9
+2023/08/12-11:35:13.893 9f8 Manual compaction at level-0 from '\x00\x05\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x06\x00\x00\x00' @ 0 : 0; will stop at '\x00\x05\x00\x00\x05' @ 69 : 1
+2023/08/12-11:35:13.894 9f8 Compacting 1@0 + 1@1 files
+2023/08/12-11:35:13.896 9f8 Generated table #15@0: 18 keys, 571 bytes
+2023/08/12-11:35:13.896 9f8 Compacted 1@0 + 1@1 files => 571 bytes
+2023/08/12-11:35:13.899 9f8 compacted to: files[ 0 1 1 0 0 0 0 ]
+2023/08/12-11:35:13.900 9f8 Delete type=2 #14
+2023/08/12-11:35:13.900 9f8 Manual compaction at level-0 from '\x00\x05\x00\x00\x05' @ 69 : 1 .. '\x00\x06\x00\x00\x00' @ 0 : 0; will stop at (end)
+2023/08/12-11:35:13.902 41b0 Level-0 table #17: started
+2023/08/12-11:35:13.905 41b0 Level-0 table #17: 475 bytes OK
+2023/08/12-11:35:13.909 41b0 Delete type=2 #11
+2023/08/12-11:35:13.909 41b0 Delete type=0 #13
+2023/08/12-11:35:13.910 41b0 Manual compaction at level-0 from '\x00\x04\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x05\x00\x00\x00' @ 0 : 0; will stop at '\x00\x04\x00\x00\x05' @ 96 : 0
+2023/08/12-11:35:13.910 41b0 Compacting 1@0 + 1@1 files
+2023/08/12-11:35:13.914 41b0 Generated table #18@0: 16 keys, 624 bytes
+2023/08/12-11:35:13.914 41b0 Compacted 1@0 + 1@1 files => 624 bytes
+2023/08/12-11:35:13.916 41b0 compacted to: files[ 0 1 1 0 0 0 0 ]
+2023/08/12-11:35:13.917 41b0 Delete type=2 #17
+2023/08/12-11:35:13.919 41b0 Manual compaction at level-0 from '\x00\x04\x00\x00\x05' @ 96 : 0 .. '\x00\x05\x00\x00\x00' @ 0 : 0; will stop at (end)

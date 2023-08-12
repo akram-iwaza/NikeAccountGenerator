@@ -1,0 +1,25 @@
+2023/08/12-11:36:50.892 36e8 Reusing MANIFEST C:\Users\akram\OneDrive\Desktop\Pocjs2\controllers\antiBotsSolving\sessions\testing8@gmail.com\Default\IndexedDB\https_www.nike.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/08/12-11:36:50.892 36e8 Recovering log #27
+2023/08/12-11:36:50.892 36e8 Reusing old log C:\Users\akram\OneDrive\Desktop\Pocjs2\controllers\antiBotsSolving\sessions\testing8@gmail.com\Default\IndexedDB\https_www.nike.com_0.indexeddb.leveldb/000027.log 
+2023/08/12-11:36:50.893 36e8 Delete type=2 #26
+2023/08/12-11:36:59.651 2704 Level-0 table #32: started
+2023/08/12-11:36:59.668 2704 Level-0 table #32: 607 bytes OK
+2023/08/12-11:36:59.670 2704 Delete type=0 #27
+2023/08/12-11:36:59.672 2704 Manual compaction at level-0 from '\x00\x0a\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x0b\x00\x00\x00' @ 0 : 0; will stop at '\x00\x0b\x00\x00\x05' @ 183 : 1
+2023/08/12-11:36:59.672 2704 Compacting 1@0 + 1@1 files
+2023/08/12-11:36:59.675 2704 Generated table #33@0: 24 keys, 768 bytes
+2023/08/12-11:36:59.675 2704 Compacted 1@0 + 1@1 files => 768 bytes
+2023/08/12-11:36:59.677 2704 compacted to: files[ 0 1 1 0 0 0 0 ]
+2023/08/12-11:36:59.678 2704 Delete type=2 #32
+2023/08/12-11:36:59.678 36e8 Manual compaction at level-0 from '\x00\x0b\x00\x00\x05' @ 183 : 1 .. '\x00\x0b\x00\x00\x00' @ 0 : 0; will stop at (end)
+2023/08/12-11:36:59.679 36e8 Level-0 table #35: started
+2023/08/12-11:36:59.682 36e8 Level-0 table #35: 483 bytes OK
+2023/08/12-11:36:59.684 36e8 Delete type=2 #29
+2023/08/12-11:36:59.684 36e8 Delete type=0 #31
+2023/08/12-11:36:59.685 36e8 Manual compaction at level-0 from '\x00\x0b\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x0c\x00\x00\x00' @ 0 : 0; will stop at '\x00\x0b\x00\x00\x05' @ 210 : 0
+2023/08/12-11:36:59.685 36e8 Compacting 1@0 + 1@1 files
+2023/08/12-11:36:59.688 36e8 Generated table #36@0: 22 keys, 823 bytes
+2023/08/12-11:36:59.688 36e8 Compacted 1@0 + 1@1 files => 823 bytes
+2023/08/12-11:36:59.690 36e8 compacted to: files[ 0 1 1 0 0 0 0 ]
+2023/08/12-11:36:59.691 36e8 Delete type=2 #35
+2023/08/12-11:36:59.691 36e8 Manual compaction at level-0 from '\x00\x0b\x00\x00\x05' @ 210 : 0 .. '\x00\x0c\x00\x00\x00' @ 0 : 0; will stop at (end)
